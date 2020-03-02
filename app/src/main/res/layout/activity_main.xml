@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/cadText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="17dp"
+        android:gravity="center"
+        android:text="CAD : "
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/chfText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/chfText"
+        android:layout_width="224dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:text="CHF : "
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/usdText"
+        app:layout_constraintStart_toStartOf="@+id/cadText"
+        app:layout_constraintTop_toBottomOf="@+id/cadText" />
+
+    <TextView
+        android:id="@+id/usdText"
+        android:layout_width="224dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="25dp"
+        android:gravity="center"
+        android:text="USD : "
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/jpyText"
+        app:layout_constraintStart_toStartOf="@+id/chfText"
+        app:layout_constraintTop_toBottomOf="@+id/chfText" />
+
+    <TextView
+        android:id="@+id/jpyText"
+        android:layout_width="224dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:text="JPY : "
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tryText"
+        app:layout_constraintStart_toStartOf="@+id/usdText"
+        app:layout_constraintTop_toBottomOf="@+id/usdText" />
+
+    <TextView
+        android:id="@+id/tryText"
+        android:layout_width="224dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="28dp"
+        android:gravity="center"
+        android:text="TRY : "
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/getRates"
+        app:layout_constraintStart_toStartOf="@+id/jpyText"
+        app:layout_constraintTop_toBottomOf="@+id/jpyText" />
+
+    <Button
+        android:id="@+id/getRates"
+        android:layout_width="235dp"
+        android:layout_height="67dp"
+        android:layout_marginBottom="100dp"
+        android:onClick="getRates"
+        android:text="KURLARI GÜNCELLE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="287dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="1 EURO ="
+        android:textAlignment="gravity"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/chfText"
+        app:layout_constraintStart_toStartOf="@+id/chfText"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
