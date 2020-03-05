@@ -7,90 +7,107 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/cadText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="17dp"
+        android:id="@+id/gbpText"
+        android:layout_width="300dp"
+        android:layout_height="91dp"
+        android:layout_marginBottom="21dp"
         android:gravity="center"
-        android:text="CAD : "
+        android:text="GBP :"
+        android:textColor="#070707"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/chfText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/chfText"
-        android:layout_width="224dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="24dp"
-        android:gravity="center"
-        android:text="CHF : "
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/usdText"
-        app:layout_constraintStart_toStartOf="@+id/cadText"
-        app:layout_constraintTop_toBottomOf="@+id/cadText" />
-
-    <TextView
-        android:id="@+id/usdText"
-        android:layout_width="224dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="25dp"
-        android:gravity="center"
-        android:text="USD : "
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/jpyText"
-        app:layout_constraintStart_toStartOf="@+id/chfText"
-        app:layout_constraintTop_toBottomOf="@+id/chfText" />
-
-    <TextView
-        android:id="@+id/jpyText"
-        android:layout_width="224dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="24dp"
-        android:gravity="center"
-        android:text="JPY : "
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/tryText"
-        app:layout_constraintStart_toStartOf="@+id/usdText"
-        app:layout_constraintTop_toBottomOf="@+id/usdText" />
-
-    <TextView
-        android:id="@+id/tryText"
-        android:layout_width="224dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="28dp"
-        android:gravity="center"
-        android:text="TRY : "
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/getRates"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/jpyText"
         app:layout_constraintTop_toBottomOf="@+id/jpyText" />
 
+    <TextView
+        android:id="@+id/usdText"
+        android:layout_width="300dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:text="USD : "
+        android:textColor="#070707"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getRates" />
+
+    <TextView
+        android:id="@+id/jpyText"
+        android:layout_width="300dp"
+        android:layout_height="91dp"
+        android:gravity="center"
+        android:text="JPY : "
+        android:textColor="#070707"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/euroText"
+        app:layout_constraintTop_toBottomOf="@+id/euroText" />
+
+    <TextView
+        android:id="@+id/euroText"
+        android:layout_width="300dp"
+        android:layout_height="92dp"
+        android:gravity="center"
+        android:text="EURO : "
+        android:textColor="#070707"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/usdText"
+        app:layout_constraintTop_toBottomOf="@+id/usdText" />
+
     <Button
         android:id="@+id/getRates"
-        android:layout_width="235dp"
-        android:layout_height="67dp"
-        android:layout_marginBottom="100dp"
+        android:layout_width="182dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="30dp"
         android:onClick="getRates"
-        android:text="KURLARI GÜNCELLE"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Çevir"
+        android:textColor="#090808"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="287dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
+        android:layout_width="177dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="30dp"
         android:gravity="center"
-        android:text="1 EURO ="
+        android:text="Türk Lirası"
         android:textAlignment="gravity"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/chfText"
-        app:layout_constraintStart_toStartOf="@+id/chfText"
+        app:layout_constraintBottom_toTopOf="@+id/getRates"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="161dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Değer giriniz"
+        android:inputType="numberDecimal"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:onClick="change"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/change" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,3 @@
 # Currency-Converter
  
-application works with euro as base because of it's free :)
+Free API base olarak sadece euro veriyor.Uygulama içinde sonuçlarla oynayarak sonuçlarý TL bazýnda uyarladým.

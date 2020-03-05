@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import org.json.JSONObject;
@@ -16,31 +15,21 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class MainActivity extends AppCompatActivity {
-    TextView gbpText;
+public class Main2Activity extends AppCompatActivity {
     TextView usdText;
     TextView euroText;
     TextView jpyText;
-    EditText edit;
-    float turkishlira;
-    float usd;
-    float jpy;
-    float euro;
-    float gbp;
+    TextView gbpText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        gbpText =findViewById(R.id.gbpText);
-        usdText=findViewById(R.id.usdText);
-        euroText =findViewById(R.id.euroText);
-        jpyText=findViewById(R.id.jpyText);
-        edit=findViewById(R.id.editText);
-    }
-    public void getRates(View view){
+        setContentView(R.layout.activity_main2);
+        usdText=findViewById(R.id.textView2);
+        euroText=findViewById(R.id.textView3);
+        jpyText=findViewById(R.id.textView4);
+        gbpText=findViewById(R.id.textView5);
         DownloadData downloadData=new DownloadData();
-
         try {
             String url="http://data.fixer.io/api/latest?access_key=d3ca6ebcfdecbb2f0014cfefb22a99a5&format=1";
             downloadData.execute(url);
@@ -49,12 +38,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void change(View view){
-        Intent intent=new Intent(MainActivity.this,Main2Activity.class);
+        Intent intent=new Intent(Main2Activity.this,MainActivity.class);
         finish();
         startActivity(intent);
     }
-
-     private class DownloadData extends AsyncTask<String,Void,String>{
+    private class DownloadData extends AsyncTask<String,Void,String> {
 
         @Override
         protected String doInBackground(String... strings) {
@@ -90,20 +78,17 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject jsonObject=new JSONObject(s);
                 String rates=jsonObject.getString("rates");
                 JSONObject jsonObject1=new JSONObject(rates);
-                float times=Float.parseFloat(edit.getText().toString());
-                if (edit.getText().toString()==""){
-                    times=1;
-                }
-                turkishlira=Float.parseFloat(jsonObject1.getString("TRY"));
-                euro=Float.parseFloat(jsonObject1.getString("EUR"))/turkishlira;
-                jpy=Float.parseFloat(jsonObject1.getString("JPY"))/turkishlira;
-                usd=Float.parseFloat(jsonObject1.getString("USD"))/turkishlira;
-                gbp=Float.parseFloat(jsonObject1.getString("GBP"))/turkishlira;
+                float euro=Float.parseFloat(jsonObject1.getString("TRY"));
+                float usd=euro/Float.parseFloat(jsonObject1.getString("USD"));
+                float jpy=euro/Float.parseFloat(jsonObject1.getString("JPY"));
+                float gbp=euro/Float.parseFloat(jsonObject1.getString("GBP"));
 
-                usdText.setText("USD (Amerikan Doları) : "+(usd*times));
-                jpyText.setText("Japon Yeni : "+(jpy*times));
-                euroText.setText("EURO : "+(euro*times));
-                gbpText.setText("İngiliz Sterlini : "+(gbp*times));
+                usdText.setText(usd+" Amerikan Doları");
+                euroText.setText(euro+" Euro");
+                jpyText.setText(jpy+" Japon Yeni");
+                gbpText.setText(gbp+" İngiliz Sterlini");
+
+
 
 
             }catch (Exception e){
